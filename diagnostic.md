@@ -5,19 +5,28 @@ Record your responses inside the fenced code blocks below each question.
 1.  Give an example of a visual hierarchy that could be modeled with components. Explain why each piece might be it's own component.
 
     ```md
-    <!-- your response here -->
+   One example could be a blog.
+
+   - post
+     - title
+     - body
+     - comments
+       - comments title
+       - comments body
+
+   Each part can be broken into components for data up and action down.
     ```
 
 1.  What is the command to generate a new component called '`my-map`'?
 
     ```sh
-    # your response here
+    ember generate component my-map
     ```
 
 1.  What files are created and/or edited to produce a component, and what are their responsibilities?
 
     ```md
-    <!-- your response here -->
+    When generating a component, you have a template hbs file created and a model hook is populated in the routes file.  The hbs file is used to create a view-state.  The route defines how to retrieve data.
     ```
 
 1.  Suppose you have a component '`my-contact`', which is loaded from
@@ -25,7 +34,11 @@ Record your responses inside the fenced code blocks below each question.
     the syntax (code that is written) to render this component inside that template?
 
     ```html
-    <!-- your response here -->
+    <ul>
+    {{#each contacts.my-contact as |my-contact|}}
+      {{contacts/my-contact my-contact=my-contact}}
+    {{/each}}
+  </ul>
     ```
 
 1.  Each contact has multiple phone numbers. Suppose you also have '`my-phone`'
@@ -34,5 +47,5 @@ Record your responses inside the fenced code blocks below each question.
     pass it data?
 
     ```html
-    <!-- your response here -->
+    <li>{{my-contact.my-phone}}</li>
     ```
